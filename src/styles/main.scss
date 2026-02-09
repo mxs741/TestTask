@@ -1,3 +1,6 @@
+@use './utils/variables';
+
 body {
   margin: 0;
+  background-color: variables.$color-bg;
 }

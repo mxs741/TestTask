@@ -1,0 +1,20 @@
+@use '@/styles/utils/mixins';
+@use '@/styles/utils/media';
+
+.nav {
+  width: 436px;
+
+  @include mixins.media(media.$bp-md) {
+    width: 319px;
+  }
+
+  @include mixins.media(media.$bp-xs) {
+    display: none;
+  }
+
+  &_list {
+    @include mixins.flex-space-between;
+    @include mixins.reset-list-style;
+    gap: 10px;
+  }
+}

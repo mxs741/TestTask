@@ -1,0 +1,64 @@
+@use '@/styles/utils/mixins';
+@use '@/styles/utils/media';
+@use '@/styles/utils/variables';
+
+.header {
+  padding: 46px 97px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: variables.$color-primary;
+  transition:
+    padding 0.3s ease,
+    border-radius 0.3s ease;
+
+  @include mixins.media(media.$bp-md) {
+    padding: 33px 67px;
+  }
+
+  @include mixins.media(media.$bp-sm) {
+    padding: 30px;
+  }
+
+  &_scrolled {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  &_menu_open {
+    border-bottom: 1px solid #cbcbcb;
+  }
+
+  &_inner {
+    margin: 0 auto;
+    max-width: 1246px;
+    display: flex;
+    gap: 66px;
+    justify-content: start;
+    align-items: center;
+
+    @include mixins.media(media.$bp-md) {
+      gap: 40px;
+    }
+  }
+}
+
+.logo {
+  @include mixins.media(media.$bp-md) {
+    width: 38px;
+  }
+
+  @include mixins.media(media.$bp-xs) {
+    display: none;
+  }
+}
+
+.logo_mobile {
+  width: 144px;
+  display: none;
+
+  @include mixins.media(media.$bp-xs) {
+    display: block;
+  }
+}

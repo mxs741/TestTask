@@ -1,0 +1,69 @@
+@use '@/styles/utils/variables';
+@use '@/styles/utils/mixins';
+@use '@/styles/utils/media';
+
+.footer {
+  background-color: variables.$color-secondary;
+  padding: 87px 97px;
+
+  @include mixins.media(media.$bp-md) {
+    padding: 60px 69px;
+  }
+
+  @include mixins.media(media.$bp-sm) {
+    padding: 52px 24px 40px;
+  }
+
+  &_top {
+    @include mixins.flex-space-between;
+    gap: 20px;
+    max-width: 1246px;
+    margin: 0 auto;
+
+    @include mixins.media(media.$bp-sm) {
+      flex-direction: column;
+      align-items: start;
+      gap: 32px;
+    }
+  }
+
+  &_logo {
+    @include mixins.media(media.$bp-md) {
+      width: 144px;
+    }
+  }
+
+  &_copyright {
+    display: block;
+    max-width: 1246px;
+    color: #999;
+    margin: 56px auto 0;
+    font-weight: 500;
+    font-size: 17px;
+
+    @include mixins.media(media.$bp-md) {
+      margin-top: 40px;
+    }
+
+    @include mixins.media(media.$bp-sm) {
+      margin-top: 26px;
+    }
+
+    @include mixins.media(media.$bp-xs) {
+      display: none;
+    }
+  }
+
+  &_copyright_mobile {
+    margin-top: 26px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+    display: none;
+
+    @include mixins.media(media.$bp-xs) {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use '@/styles/utils/mixins';
+@use '@/styles/utils/media';
+
+.divider {
+  border-top: 1px solid #818181;
+  opacity: 0.25;
+  margin: 25px auto 0;
+  max-width: 1246px;
+  width: 100%;
+
+  @include mixins.media(media.$bp-md) {
+    margin-top: 21px;
+  }
+
+  @include mixins.media(media.$bp-sm) {
+    margin-top: 48px;
+  }
+}
