@@ -1,0 +1,29 @@
+@use '@/styles/utils/mixins';
+@use '@/styles/utils/media';
+
+.link {
+  text-decoration: none;
+  transition: color 0.2s ease-in;
+  font-weight: 500;
+  font-size: 18px;
+
+  @include mixins.media(media.$bp-md) {
+    font-size: 14px;
+  }
+}
+
+.nav {
+  color: #606060;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.footer {
+  color: #b9b9b9;
+
+  &:hover {
+    color: #ececec;
+  }
+}

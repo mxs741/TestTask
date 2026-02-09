@@ -1,0 +1,8 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  font-family: var(--font-inter);
+  font-weight: 400;
+}

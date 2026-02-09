@@ -1,0 +1,69 @@
+@use '@/styles/utils/mixins';
+@use '@/styles/utils/media';
+@use '@/styles/utils/variables';
+
+.burger_wrapper {
+  display: none;
+
+  @include mixins.media(media.$bp-xs) {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+}
+
+.burger_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  z-index: 1001;
+}
+
+.burger_line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: variables.$text-color-primary;
+  border-radius: 1px;
+  transform-origin: center;
+}
+
+.mobile_menu {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: variables.$color-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 30px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #cbcbcb;
+  margin-bottom: 36px;
+}
+
+.mobile_nav_list {
+  @include mixins.reset-list-style;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  a {
+    font-size: 40px;
+  }
+}

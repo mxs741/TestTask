@@ -1,0 +1,26 @@
+@use '@/styles/utils/mixins';
+@use '@/styles/utils/media';
+
+.nav {
+  max-width: 635px;
+  width: 100%;
+
+  @include mixins.media(media.$bp-md) {
+    max-width: 453px;
+  }
+
+  &_list {
+    @include mixins.flex-space-between;
+    @include mixins.reset-list-style;
+
+    @include mixins.media(media.$bp-sm) {
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+    }
+
+    @include mixins.media(media.$bp-xs) {
+      gap: 30px;
+    }
+  }
+}
