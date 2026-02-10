@@ -4,3 +4,15 @@ body {
   margin: 0;
   background-color: variables.$color-bg;
 }
+
+@media (min-width: 2560px) {
+  html {
+    zoom: 1.25;
+  }
+}
+
+@media (min-width: 3840px) {
+  html {
+    zoom: 1.5;
+  }
+}

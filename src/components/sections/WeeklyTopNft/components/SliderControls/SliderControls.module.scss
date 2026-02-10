@@ -1,0 +1,48 @@
+@use '@/styles/utils/variables';
+@use '@/styles/utils/media';
+@use '@/styles/utils/mixins';
+
+.controls {
+  display: flex;
+  align-items: center;
+  margin: 70px auto 0;
+  width: fit-content;
+  border-radius: 12px;
+  background: variables.$color-primary;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+
+  @include mixins.media(media.$bp-md) {
+    margin-top: 50px;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: variables.$color-secondary;
+  transition:
+    background-color 0.15s,
+    opacity 0.15s;
+
+  &:hover:not(:disabled) {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: #d9d9d9;
+}

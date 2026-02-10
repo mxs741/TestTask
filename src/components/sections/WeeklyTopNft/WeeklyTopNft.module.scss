@@ -1,0 +1,68 @@
+@use '@/styles/utils/mixins';
+@use '@/styles/utils/media';
+@use '@/styles/utils/variables';
+
+.section {
+  padding: 80px 0;
+  overflow: hidden;
+
+  @include mixins.media(media.$bp-md) {
+    padding: 60px 0;
+  }
+  @include mixins.media(media.$bp-xs) {
+    padding: 40px 0;
+  }
+}
+
+.title {
+  font-family: var(--font-poppins);
+  font-size: 46px;
+  font-weight: 600;
+  color: #c5c5c5;
+  text-align: center;
+  margin: 0 0 48px;
+
+  @include mixins.media(media.$bp-md) {
+    font-size: 32px;
+    margin-bottom: 36px;
+  }
+  @include mixins.media(media.$bp-xs) {
+    font-size: 30px;
+    margin-bottom: 28px;
+  }
+}
+
+.status {
+  text-align: center;
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  color: #606060;
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+.slide {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}

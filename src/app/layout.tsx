@@ -1,4 +1,5 @@
 import { Footer, Header } from '@/components/layout';
+import { StoreProvider } from '@/store/StoreProvider';
 import { inter, outfit, poppins, publicSans } from './fonts';
 import '@/styles/main.scss';
 import classes from '@/styles/layout.module.scss';
@@ -19,9 +20,11 @@ export default function RootLayout({
           classes.layout,
         ].join(' ')}
       >
-        <Header />
-        {children}
-        <Footer />
+        <StoreProvider>
+          <Header />
+          {children}
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

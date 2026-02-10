@@ -1,7 +1,11 @@
+import { WeeklyTopNft } from '@/components/sections';
+
 export default function Home() {
   return (
     <div>
-      <main></main>
+      <main>
+        <WeeklyTopNft />
+      </main>
     </div>
   );
 }

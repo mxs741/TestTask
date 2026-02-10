@@ -1,0 +1,106 @@
+@use '@/styles/utils/mixins';
+@use '@/styles/utils/media';
+@use '@/styles/utils/variables';
+
+.card {
+  background-color: variables.$color-primary;
+  border-radius: 24px;
+  overflow: hidden;
+  user-select: none;
+  padding: 14px;
+
+  @include mixins.media(media.$bp-md) {
+    padding: 10px;
+  }
+}
+
+.image {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 24px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e0e0e0, #c4c4c4);
+}
+
+.timer {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  padding: 7px 10px;
+  border-radius: 40px;
+  background: #1c1d2059;
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-poppins);
+}
+
+.name {
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  font-weight: 600;
+  color: variables.$color-secondary;
+  margin: 14 0 0;
+
+  @include mixins.media(media.$bp-md) {
+    font-size: 16px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 14px;
+}
+
+.bid_btn {
+  padding: 10px 17px;
+  border-radius: 9px;
+  border: none;
+  background-color: variables.$color-secondary;
+  color: variables.$color-primary;
+  font-family: var(--font-poppins);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #333333;
+  }
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &_label {
+    font-size: 11px;
+    color: #94a3b8;
+    font-family: var(--font-poppins);
+  }
+
+  &_value {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-family: var(--font-poppins);
+    font-size: 16px;
+    font-weight: 600;
+    color: variables.$color-secondary;
+  }
+}
