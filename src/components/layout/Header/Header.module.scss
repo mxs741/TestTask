@@ -3,26 +3,27 @@
 @use '@/styles/utils/variables';
 
 .header {
-  padding: 46px 97px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   background: variables.$color-primary;
-  transition:
-    padding 0.3s ease,
-    border-radius 0.3s ease;
+  padding-left: 97px;
+  padding-right: 97px;
+  transition: border-radius 0.3s ease;
 
   @include mixins.media(media.$bp-md) {
-    padding: 33px 67px;
+    padding-left: 67px;
+    padding-right: 67px;
   }
 
   @include mixins.media(media.$bp-sm) {
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   &_scrolled {
-    padding-top: 18px;
-    padding-bottom: 18px;
     border-radius: 0 0 20px 20px;
   }
 
@@ -42,6 +43,10 @@
       gap: 40px;
     }
   }
+}
+
+.spacer {
+  height: var(--header-height, 120px);
 }
 
 .logo {
